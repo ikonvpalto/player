@@ -1,4 +1,4 @@
-package network;
+package web;
 
 import javax.sound.sampled.AudioFormat;
 
@@ -24,7 +24,7 @@ public class AudioInfo {
         this.audioFormat = audioFormat;
     }
 
-    public Long getDuration() {
+    public long getDuration() {
         return duration;
     }
 

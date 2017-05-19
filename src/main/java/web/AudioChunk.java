@@ -1,19 +1,19 @@
-package network;
+package web;
 
 import common.Consts;
 
 public class AudioChunk {
 
-    byte[] chunk = new byte[Consts.PACKAGE_SIZE_MAX];
+    byte[] chunk = new byte[Consts.PACKAGE_SIZE];
     int len;
-    transient float duration;
+    private int num;
 
-    public float getDuration() {
-        return duration;
+    public int getNum() {
+        return num;
     }
 
-    public void setDuration(float duration) {
-        this.duration = duration;
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public byte[] getChunk() {
@@ -40,5 +40,9 @@ public class AudioChunk {
 
     public void setLen(int len) {
         this.len = len;
+    }
+
+    public boolean empty() {
+        return 0 == len;
     }
 }

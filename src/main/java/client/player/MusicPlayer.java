@@ -1,15 +1,17 @@
 package client.player;
 
+import client.player.listener.PlayerListener;
 import entity.Track;
 
 import javax.sound.sampled.LineUnavailableException;
 
-public interface Player{
+public interface MusicPlayer {
 
     void open(Track track) throws LineUnavailableException;
     void close();
-    void play();
+    void resume();
     void pause();
+
     float getVolume();
     void setVolume(float volume);
     float getPlaybackPos();
@@ -18,6 +20,6 @@ public interface Player{
     boolean isOpened();
     boolean isPlaying();
 
-    void addPlaybackListener(PlaybackListener listener);
-    void removePlaybackListener(PlaybackListener listener);
+    void addListener(PlayerListener listener);
+    void removeListener(PlayerListener listener);
 }
